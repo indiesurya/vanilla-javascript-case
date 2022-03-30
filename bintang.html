@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bintang Ascending</p>
+    <input id="bintang" type="text" placeholder="Masukan Jumlah Bintang">
+    <button type="button" onclick="bintangAscending()">Klik</button>
+
+    <p>Bintang Descending</p>
+    <input id="bintang1" type="text" placeholder="Masukan Jumlah Bintang">
+    <button type="button" onclick="bintangDescending()">Klik</button>
+
+    <p>Bintang Segitiga Sebelah Kanan</p>
+    <input type="text" id="bintang2" placeholder="Masukan Tinggi Segitiga">
+    <button type="button" onclick="bintangSebelahKanan()">Klik</button>
+
+    <p>Bintang Segitiga Sama Sisi</p>
+    <input type="text" id="bintang3" placeholder="Masukan Tinggi Segitiga">
+    <button type="button" onclick="bintangSamaSisi()">Klik</button>
+
+    <p>hasil : <p id="hasil"></p></p>
+</body>
+<script>
+    function bintangAscending(){
+        bintang = document.getElementById("bintang").value;
+        let a = 0;
+        let text="";
+        for(a;a<=bintang;a++){
+            for(let b=0;b<a;b++){
+                text+= "*" ;
+            }text+="\n"
+        }
+        document.getElementById("hasil").innerText = text;
+    }
+
+    function bintangDescending(){
+        bintang = document.getElementById("bintang1").value;
+        let text1="";
+        for(bintang;bintang>=1;bintang--){
+            for(let a=0;a<bintang;a++){
+                text1+= "*"
+            }text1+="\n"
+        }
+        document.getElementById("hasil").innerText = text1;
+    }
+
+    function bintangSebelahKanan(){
+        bintang = document.getElementById("bintang2").value;
+        awal=bintang;
+        let text2="";
+        for(let a=0;a<bintang;a++){
+            for(let b=0;b<awal;b++){
+            if(b==awal-1){
+                for(let c=0;c<=a;c++){
+                    text2+="*"
+                }
+                text2+="\n"
+            }
+            else{
+                    text2+="_"
+            }
+            }
+            awal=awal-1;
+        }
+        console.log(text2)
+        document.getElementById("hasil").innerText = text2;
+    }
+
+    function bintangSamaSisi(){
+        bintang = document.getElementById("bintang3").value;
+        awal=bintang;
+        let text2="";
+        for(let a=0;a<bintang;a++){
+            for(let b=0;b<awal;b++){
+            if(b==awal-1){
+                for(let c=0;c<=a;c++){
+                    text2+="*"
+                }
+                for(let k=0;k<a;k++){
+                    text2+="*"
+                }
+                text2+="\n"
+            }
+            else{
+                    text2+="_"
+            }
+            }
+            awal=awal-1;
+        }
+        console.log(text2)
+        document.getElementById("hasil").innerText = text2;
+    }
+</script>
+</html>
