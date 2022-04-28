@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: salmon;
+        padding: 20%;
+        font-family: sans-serif;
+    }
+    .calculator{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        padding: 5%;
+    }
+    .input{
+        background-color: rgb(228, 243, 255);
+        height: 100px;
+    }
+    .button{
+        margin-top: 20px;
+        background-color: aliceblue;
+        height: auto;
+        background-color: #2196F3;
+        padding: 10px;
+    }
+    .angka{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    .box{
+        border: 0.1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+        background-color: aliceblue;
+    }
+    .fitur{
+        background-color: rgb(175, 173, 173);
+    }
+    .fitur:hover{
+        background-color: rgb(134, 134, 134);
+        transform: scale(1.03)
+    }
+    .submit{
+        background-color: rgb(78, 78, 78);
+    }
+    .submit:hover{
+        background-color: rgb(61, 61, 61);
+        transform: scale(1.03)
+    }
+
+    .bil:hover{
+        background-color: rgb(169, 215, 255);
+    }
+
+    .input input{
+        background-color: rgb(228, 243, 255);
+        border: 0;
+        height: 90%;
+        width: 98%;
+        font-size: 30px;
+        text-align: right;
+    }
+    .input input:focus{
+        outline: none;
+    }
+</style>
+<body>
+    <div class="calculator">
+        <div class="input">
+            <input type="text">
+        </div>
+        <div class="button">
+            <div class="angka">
+                <button class="box fitur">%</button>
+                <button class="box fitur">CE</button>
+                <button class="box fitur">C</button>
+                <button class="box fitur">del</button>
+                <button class="box fitur">1/x</button>
+                <button class="box fitur">x2</button>
+                <button class="box fitur">2/x</button>
+                <button class="box fitur">:</button>
+                <button class="box bil">7</button>
+                <button class="box bil">8</button>
+                <button class="box bil">9</button>
+                <button class="box fitur">X</button>
+                <button class="box bil">6</button>
+                <button class="box bil">5</button>
+                <button class="box bil">4</button>
+                <button class="box fitur">-</button>
+                <button class="box bil">3</button>
+                <button class="box bil">2</button>
+                <button class="box bil">1</button>
+                <button class="box fitur">+</button>
+                <button class="box bil">+/-</button>
+                <button class="box bil">0</button>
+                <button class="box bil">,</button>
+                <button class="box submit">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
