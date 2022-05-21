@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Convert</title>
+</head>
+<body>
+    <label for="angka">Input angka</label>
+    <input type="text" id="angka" name="angka">
+    <select name="param1" id="param1">
+        <option value="km">KM</option>
+        <option value="hm">HM</option>
+        <option value="dam">DAM</option>
+        <option value="m">M</option>
+        <option value="dm">DM</option>
+        <option value="cm">CM</option>
+        <option value="mm">MM</option>
+    </select>
+    <select name="param2" id="param2">
+        <option value="km">KM</option>
+        <option value="hm">HM</option>
+        <option value="dam">DAM</option>
+        <option value="m">M</option>
+        <option value="dm">DM</option>
+        <option value="cm">CM</option>
+        <option value="mm">MM</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <p>Hasil : <span id="hasil"></span></p>
+</body>
+<script>
+    function convert(){
+        let angka = document.getElementById("angka").value;
+        let parram1 = document.getElementById("param1").value;
+        let parram2 =  document.getElementById("param2").value;
+
+        arr_parram=['km','hm','dam','m','dm','cm','mm'];
+        arr_parram1=0;
+        arr_parram2=0;
+        for(i=0;i<6;i++){
+            if(parram1 === arr_parram[i]){
+                arr_parram1 = i;
+            }
+            else{
+                arr_parram1= arr_parram1;
+            }
+        }
+        for(i=0;i<6;i++){
+            if(parram2 === arr_parram[i]){
+                arr_parram2 = i;
+            }
+            else{
+                arr_parram2= arr_parram2;
+            }
+        }
+        console.log(arr_parram1, arr_parram2)
+        if(arr_parram1 == arr_parram2){
+            hasil = angka;
+        }
+        else if(arr_parram1 < arr_parram2){
+            dif = arr_parram2 - arr_parram1;
+            hasil = angka*(10**dif);
+        }
+        else{
+            dif = arr_parram1 - arr_parram2;
+            hasil = angka/(10**dif);
+        }
+        console.log(angka, arr_parram1, arr_parram2, hasil);
+        document.getElementById("hasil").innerHTML = hasil;
+    }
+</script>
+</html>
