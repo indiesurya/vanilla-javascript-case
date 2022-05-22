@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain Dengan Warna</title>
+</head>
+<style>
+    body {
+        background-color: lightblue;
+        text-align: center;
+    }
+
+    .hijau-muda {
+        background-color: lightgreen;
+    }
+
+    .kotak {
+        width: 25px;
+        height: 25px;
+        margin: 10px auto;
+    }
+
+    .merah {
+        background-color: red;
+    }
+
+    .hijau {
+        background-color: green;
+    }
+
+    .biru {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <h2>Bermain dengan Warna</h2>
+    <button type="button" id="ubahWarna">Ubah Warna</button>
+    <div class="kotak merah"></div>
+    <input type="range" name="slideRed" min="0" max="255">
+    <div class="kotak hijau"></div>
+    <input type="range" name="slideGreen" min="0" max="255">
+    <div class="kotak biru"></div>
+    <input type="range" name="slideBlue" min="0" max="255">
+    <script type="text/javascript">
+        const btnUbahWarna = document.getElementById('ubahWarna');
+        const body = document.querySelector('body');
+        btnUbahWarna.addEventListener('click', function () {
+            body.classList.toggle('hijau-muda');
+        })
+
+        const btnRandomColor = document.createElement('button');
+        const teksButtonRandom = document.createTextNode('Acak Warna');
+        btnRandomColor.appendChild(teksButtonRandom);
+        btnRandomColor.setAttribute('type', 'button');
+        btnUbahWarna.after(btnRandomColor);
+
+        btnRandomColor.addEventListener('click', function () {
+
+            // warna merah
+            const r = Math.round(Math.random() * 255 + 1);
+
+            // warna hijau
+            const g = Math.round(Math.random() * 255 + 1);
+
+            // warna biru
+            const b = Math.round(Math.random() * 255 + 1);
+
+
+            body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        });
+
+
+        const red = document.querySelector('input[name="slideRed"]');
+        const green = document.querySelector('input[name="slideGreen"]');
+        const blue = document.querySelector('input[name="slideBlue"]');
+
+        red.addEventListener('change', function () {
+            let valueRed = red.value;
+            let valueGreen = green.value;
+            let valueBlue = blue.value;
+            body.style.backgroundColor = 'rgb(' + valueRed + ','+valueGreen+','+valueBlue+')';
+
+            const warnaMerah = document.querySelector('.merah');
+            warnaMerah.style.backgroundColor = 'rgb('+valueRed+',0,0)'
+            red.style.backgroundColor=valueRed;
+        });
+
+
+        green.addEventListener('change', function () {
+            let valueRed = red.value;
+            let valueGreen = green.value;
+            let valueBlue = blue.value;
+            body.style.backgroundColor = 'rgb(' + valueRed + ','+valueGreen+','+valueBlue+')';
+
+            const warnaHijau = document.querySelector('.hijau');
+            warnaHijau.style.backgroundColor = 'rgb(0,'+valueGreen+',0)'
+        });
+
+
+        blue.addEventListener('change', function () {
+            let valueRed = red.value;
+            let valueGreen = green.value;
+            let valueBlue = blue.value;
+            body.style.backgroundColor = 'rgb(' + valueRed + ','+valueGreen+','+valueBlue+')';
+
+            const warnaBiru = document.querySelector('.biru');
+            warnaBiru.style.backgroundColor = 'rgb(0,0,'+valueBlue+')'
+        });
+    </script>
+</body>
+
+</html>
